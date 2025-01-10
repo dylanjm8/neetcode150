@@ -1,6 +1,6 @@
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        # two pointers, no extra memory
+        # two pointers, no extra memory   
 
         l = 0
         r = len(numbers) - 1
