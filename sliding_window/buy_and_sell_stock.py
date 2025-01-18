@@ -8,7 +8,7 @@ class Solution:
         l = 0 # buy
         r = 1 # sell
         
-        max_profit = 0
+        max_profit = 0 
 
         while r<len(prices):
             if prices[l] < prices[r]: # price increase
