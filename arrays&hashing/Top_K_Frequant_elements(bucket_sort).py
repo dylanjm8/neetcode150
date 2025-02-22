@@ -1,6 +1,6 @@
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        count = {}
+        count = {} 
 # frequancy is a list of lists to accommodate for the key values from the count hash map that are to be inserted
         frequency = [[]for i in range(len(nums)+1)] # + 1 since a 0 value in this case is useless since 0 occurrences shouldn't be included
         for n in nums: # for each value in nums, count the number of occurrences it has in the list
