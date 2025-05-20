@@ -1,2 +1,2 @@
 ## Neetcode150
-A repository of coding problems for interview prep
+A repository for understanding and solving coding problems for interview prep
