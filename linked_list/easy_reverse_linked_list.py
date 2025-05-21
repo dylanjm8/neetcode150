@@ -28,3 +28,4 @@ class Solution:
             curr = nxt
         return prev
         
+# solved
