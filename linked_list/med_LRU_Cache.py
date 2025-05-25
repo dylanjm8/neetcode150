@@ -20,18 +20,18 @@ class LRUCache:
         prev, nxt = node.prev, node.next
         prev.next, nxt.prev = nxt, prev
 
-    def insert(self, node):
+    def insert(self, node): # create insert and remove funtions to spread out for clarity and modularty
         # inserting at right
         prev, nxt = self.right.prev, self.right
         prev.next = nxt.prev = node
         node.next, node.prev = nxt, prev
-        
+
     def get(self, key: int) -> int:
         # should return corresponding value for key, if null return -1
         if key in self.cache:
             # want to remove from list and reinsert it to simulate being new most recent cache entry
             self.remove(self.cache[key]) 
-            self.insert(self.cache[key]) # . -> either a function or an instance variable 
+            self.insert(self.cache[key]) # . -> either a function or an instance variable defined in init
             return self.cache[key].val
         return -1
 
@@ -39,15 +39,15 @@ class LRUCache:
         # add key-value, update key-value, evict LRU key-value if cache is full (using L R pointers)
         # R and L pointers created as dummy nodes
         if key in self.cache:
-            self.remove(self.cache[key])
+            self.remove(self.cache[key]) # this allows for updating to most recent
             
-        self.cache[key] = Node(key,value)
-        self.insert(self.cache[key])
+        self.cache[key] = Node(key,value) # saving node instance into the dict 
+        self.insert(self.cache[key]) # using dict entry to reference the node we want to insert
 
         if len(self.cache) > self.cap:
             # remove from linked list AND delete from HM
             lru = self.left.next
-            self.remove(lru) 
-            del self.cache[lru.key]
+            self.remove(lru) # remove pointers to node and actual node
+            del self.cache[lru.key] # remove reference to node in dict
 
 
