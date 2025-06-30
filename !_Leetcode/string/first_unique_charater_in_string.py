@@ -11,3 +11,4 @@ class Solution:
             if count[c] == 1:
                 return i
         return -1
+  
