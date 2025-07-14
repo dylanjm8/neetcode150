@@ -19,3 +19,4 @@ class Solution:
                 return cur
 
         # Since there is a guarenteed solution we can run an infinite loop
+# BSTs have O(logn) search and insertion time comps
